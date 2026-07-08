@@ -53,3 +53,25 @@ Separate into 3 branches:
 
 How it works in real life: [Demonstation Video](https://youtu.be/iOw7xoih4Bo)
 
+## Project 3: Read End-to-End RAG pipeline with Pinecone Vector Database.
+
+The project taken in internal documentation from the company, chunked and pass them through embedding models, then when user ask a queries, the RAG agent looks up relevant information on the document an provide accurate, halucination-free answers.
+
+**Structure:**
+```
+[React-Vite Frontend] 
+       │ (Uploads Multi-part Document / Sends Query)
+       ▼
+[n8n Webhook Gateway]
+       │
+       ├─► [Ingestion Stage]: Extract Text ──► Chunking ──► Embeddings Model ──► [Pinecone DB]
+       │
+       └─► [Query Stage]: Embed User Query ──► Vector Search ──► Context Retrieval ──► [AI Chat Agent] ──► Responses
+```
+
+**n8n Workflow**
+
+![Workflow](RAG-pipeline-pinecone/workflow.png)
+
+Demonstation:
+
