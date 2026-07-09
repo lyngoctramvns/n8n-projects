@@ -75,3 +75,4 @@ The project taken in internal documentation from the company, chunked and pass t
 
 Demonstation:
 
+![Demo](RAG-pipeline-pinecone/RAG-pipeline.gif)
